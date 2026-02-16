@@ -159,4 +159,45 @@ Provide a **comprehensive and detailed view** of all loan records.
 ## 📋 Grid View (Detailed Table)
 
 A centralized data table including:
-- Loan
+- Loan ID
+- Issue Date
+- Funded Amount
+- Amount Received
+- Interest Rate
+- DTI
+- Loan Status
+- State
+- Employment Length
+- Loan Purpose
+- Home Ownership
+
+---
+
+## 📌 Description
+This dashboard offers a **holistic snapshot of key loan-related data**, enabling users to:
+
+- Drill down into individual loan records  
+- Perform detailed analysis  
+- Access all critical information in one place  
+
+---
+
+## 📈 Expected Outcomes
+
+- Clear visibility of loan portfolio performance  
+- Identification of high-risk loan segments  
+- Improved decision-making for loan approvals  
+- Better understanding of customer financial behavior  
+- Enhanced reporting and analytics efficiency  
+
+---
+
+## 🚀 Business Impact
+
+This dashboard will help the bank to:
+
+- Reduce default risk through better analysis  
+- Optimize loan approval strategies  
+- Improve revenue through data-driven insights  
+- Enhance customer segmentation and targeting  
+- Enable faster and more accurate decision-making  
