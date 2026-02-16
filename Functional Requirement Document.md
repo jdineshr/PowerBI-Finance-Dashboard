@@ -184,7 +184,7 @@ This dashboard offers a **holistic snapshot of key loan-related data**, enabling
 
 ## 📈 Expected Outcomes
 
-- Clear visibility of loan portfolio performance  
+- Clear visibility of loan portfolio performance 
 - Identification of high-risk loan segments  
 - Improved decision-making for loan approvals  
 - Better understanding of customer financial behavior  
