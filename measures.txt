@@ -1,0 +1,60 @@
+# Power BI Measures
+
+## Finance Bank Loan
+```DAX
+
+MoM Avg DTI = DIVIDE([MTD Avg DTI]- [PMTD Avg DTI], [PMTD Avg DTI])
+
+MoM Avg Interest Rate = DIVIDE([MTD Avg Interest Rate]- [PMTD Avg Interest Rate], [PMTD Avg Interest Rate])
+
+MoM Funded Amount = DIVIDE([MTD Funded Amount]-[PMTD Funded Amount], [PMTD Funded Amount])
+
+MoM Loan Application = ([MTD Loan Applications]-[PMTD Loan Application])/[PMTD Loan Application]
+
+MoM Received Amount = DIVIDE([MTD Received Amount]- [PMTD Received Amount], [PMTD Received Amount])
+
+MTD Avg DTI = TOTALMTD([Total Avg DTI], 'Date Table'[Date])
+
+MTD Avg Interest Rate = TOTALMTD([Total Avg Interest Rate],'Date Table'[Date])
+
+MTD Funded Amount = TOTALMTD([Total Funded Amount],'Date Table'[Date])
+
+MTD Loan Applications = CALCULATE(TOTALMTD([Total Loan Applications], 'Date Table'[Date]))
+
+MTD Received Amount = TOTALMTD([Total Received Amount],'Date Table'[Date])
+
+PMTD Avg DTI = TOTALMTD([Total Avg DTI], DATEADD('Date Table'[Date], -1, MONTH))
+
+PMTD Avg Interest Rate = TOTALMTD([Total Avg Interest Rate], DATEADD('Date Table'[Date], -1, MONTH))
+
+PMTD Funded Amount = TOTALMTD([Total Funded Amount], DATEADD('Date Table'[Date], -1, MONTH))
+
+PMTD Loan Application = TOTALMTD([Total Loan Applications], DATEADD('Date Table'[Date], -1, MONTH))
+
+PMTD Received Amount = TOTALMTD([Total Received Amount], DATEADD('Date Table'[Date], -1,MONTH))
+
+Total Avg DTI = AVERAGE(financial_loan[dti])
+
+Total Avg Interest Rate = AVERAGE(financial_loan[int_rate])
+
+Total Funded Amount = SUM(financial_loan[loan_amount])
+
+Total Loan Applications = COUNT(financial_loan[id])
+
+Total Received Amount = SUM(financial_loan[total_payment])
+
+Bad Loan % = (CALCULATE([Total Loan Applications], financial_loan[Good Loan Vs Bad Loan]= "Bad Loan"))/[Total Loan Applications]
+
+Bad Loan Applications = CALCULATE([Total Loan Applications], financial_loan[Good Loan Vs Bad Loan]= "Bad Loan")
+
+Bad Loan Funded Amount = CALCULATE([Total Funded Amount], financial_loan[Good Loan Vs Bad Loan]= "Bad Loan")
+
+Bad Loan Total Received = CALCULATE([Total Received Amount], financial_loan[Good Loan Vs Bad Loan]= "Bad Loan")
+
+Good Loan % = (CALCULATE([Total Loan Applications], financial_loan[Good Loan Vs Bad Loan]= "Good Loan"))/[Total Loan Applications]
+
+Good Loan Applications = CALCULATE([Total Loan Applications], financial_loan[Good Loan Vs Bad Loan]= "Good Loan")
+
+Good Loan Funded Amount = CALCULATE([Total Funded Amount], financial_loan[Good Loan Vs Bad Loan]= "Good Loan")
+
+Good Loan Total Received = CALCULATE([Total Received Amount], financial_loan[Good Loan Vs Bad Loan]= "Good Loan")
